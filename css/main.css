@@ -14,6 +14,7 @@ header {
   background-color: #000103;
   border: 1px solid #515052;
   margin: 5px;
+  padding: 0px;
 }
 header #btnMenu, header label {
   display: none;
@@ -47,6 +48,30 @@ header nav ul li a {
 header nav ul li a:hover {
   text-decoration: underline #FFFFFA;
 }
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 20px;
+    align-items: center; /* Esto ya lo tenés, pero asegurate de que no se sobreescriba */
+    margin-bottom: 0px;  /* Reseteamos márgenes que puedan molestar */
+}
+
+/* Ajuste específico para el logo central */
+header nav ul .logoUl {
+    display: flex;         /* Hacemos que el li sea flex */
+    align-items: center;   /* Centramos la imagen dentro del li */
+    justify-content: center;
+    margin: 0;             /* Quitamos márgenes heredados del h1 si lo estás usando */
+}
+
+header nav ul .logoUl img {
+    width: 150px;
+    height: auto;          /* Mantenemos proporción */
+    display: block;        /* Evitamos el espacio extra de los elementos inline */
+}
+
 
 .mainIndex {
   background-color: #000103;
@@ -166,6 +191,69 @@ header nav ul li a:hover {
   border: 2px solid #FFFFFA;
   align-items: center;
   justify-content: center;
+}
+
+
+/* Estilos para la sección de notas en el Carrito */
+.notas-pedido {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #000103; /* Fondo negro como tu header */
+    border: 1px solid #515052;
+    text-align: left;
+}
+
+.notas-pedido h3 {
+    margin-bottom: 15px;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #515052;
+}
+
+.boton-agregar {
+    background-color: #FFFFFA;
+    color: #000103;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+#taskList li {
+    background-color: #515052; /* Gris como tu footer */
+    color: #FFFFFA;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo para cuando hacés clic en la nota (marcar como lista) */
+.completada span {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.btn-borrar {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .faqStyle {
