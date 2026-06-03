@@ -1,23 +1,8 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
-const useCartStore = create((set) => ({
-  // 1. ESTADO: Aquí guardas tus datos
+export const useCartStore = create((set) => ({
   cart: [],
-
-  // 2. ACCIONES: Aquí van las funciones para modificar el estado
-  
-  // Agregar al carrito
-  addToCart: (product) => set((state) => ({ 
-    cart: [...state.cart, product] 
-  })),
-
-  // Eliminar del carrito por ID
-  removeFromCart: (productId) => set((state) => ({
-    cart: state.cart.filter((item) => item.id !== productId)
-  })),
-
-  // Vaciar el carrito
+  addToCart: (product) => set((state) => ({ cart: [...state.cart, product] })),
+  removeFromCart: (id) => set((state) => ({ cart: state.cart.filter(item => item.id !== id) })),
   clearCart: () => set({ cart: [] }),
 }));
-
-export default useCartStore;
