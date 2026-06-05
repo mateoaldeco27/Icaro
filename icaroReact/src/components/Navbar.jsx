@@ -1,22 +1,26 @@
+import { AppBar, Toolbar, Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { Box } from '@mui/material';
 
 const Navbar = () => {
   return (
-    <header style={{ backgroundColor: '#000', padding: '20px', borderBottom: '1px solid #333' }}>
-      <nav style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '40px' }}>
-        <Link to="/usuario" style={{ color: 'white', textDecoration: 'none' }}>USUARIO</Link>
-        <Link to="/carrito" style={{ color: 'white', textDecoration: 'none' }}>CARRITO</Link>
+    <AppBar position="static" sx={{ 
+      backgroundColor: '#000103', 
+      boxShadow: 'none', 
+      border: '1px solid #515052', 
+      margin: '5px' 
+    }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-evenly', padding: '15px 20px' }}>
+        <Button color="inherit" component={Link} to="/usuario" sx={{ fontSize: '20px', fontFamily: 'Montserrat' }}>USUARIO</Button>
+        <Button color="inherit" component={Link} to="/carrito" sx={{ fontSize: '20px', fontFamily: 'Montserrat' }}>CARRITO</Button>
         
-        {/* Logo central tal cual tu HTML */}
-        <Link to="/">
-          <img src="/logo.png" alt="SINISTER" style={{ height: '60px' }} />
+        <Link to="/" style={{ display: 'flex' }}>
+          <img src="/logo.png" alt="Logo" style={{ width: '150px' }} />
         </Link>
         
-        <Link to="/faq" style={{ color: 'white', textDecoration: 'none' }}>FAQ</Link>
-        <Link to="/shop" style={{ color: 'white', textDecoration: 'none' }}>SHOP</Link>
-      </nav>
-    </header>
+        <Button color="inherit" component={Link} to="/faq" sx={{ fontSize: '20px', fontFamily: 'Montserrat' }}>FAQ</Button>
+        <Button color="inherit" component={Link} to="/shop" sx={{ fontSize: '20px', fontFamily: 'Montserrat' }}>SHOP</Button>
+      </Toolbar>
+    </AppBar>
   );
 };
 

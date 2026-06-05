@@ -1,7 +1,13 @@
-import { useCartStore } from '../store/useCartStore'; // Asegúrate que la ruta sea correcta
 import { Container, Typography, List, ListItem, ListItemText, Button, Divider } from '@mui/material';
 
 const Carrito = () => {
+
+  return (
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      {/* Tu contenido aquí */}
+    </Container>
+  );
+
   const { cart, removeFromCart, clearCart } = useCartStore();
 
   return (
